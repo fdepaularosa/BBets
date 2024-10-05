@@ -49,7 +49,7 @@ same_birthday_prob <- function(class_size, n_sim) {
 }
 
 # Simulation settings
-class_size <- 35
+class_size <- 23
 n_sim <- 1000
 n_trials <- 100
 
@@ -119,13 +119,17 @@ mean_probs=mean(probs)
 print(mean_probs)
 ```
 
+```{r}
 
+```
+
+for a fair bet Dr.J should be paying $4.40.
 
 get answers for a smaller class
 
 ```{r}
 # Simulation settings
-class_size <- 27
+class_size <- 20
 n_sim <- 1000
 n_trials <- 100
 
@@ -137,8 +141,6 @@ for (i in 1:n_trials) {
   probs[i] <- same_birthday_prob(class_size, n_sim)
 }
 
-EV= mean_probs*1*20 - (1-mean_probs)*1*20
-cat("Average win = ", EV)
 ```
 
 ## mean and std dev 
@@ -159,6 +161,8 @@ EV= mean_probs*1*20 - (1-mean_probs)*1*20
 cat("Average win = ", EV)
 ```
 For a class size of 27 people with 20 people betting, Dr.J's profit would be $5.18.
+
+For a class size of 23 $1 dollar would be fair. 
 
 ### Explanation:
 
