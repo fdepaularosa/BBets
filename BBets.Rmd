@@ -80,6 +80,17 @@ cat("Standard Deviation of Probabilities:", sd_probs, "\n")
 hist(probs, main = "Histogram of Probabilities", xlab = "Probability", col = "lightblue", border = "black")
 
 ```
+```{r}
+cat("probability Dr.J wins is",mean_probs)
+```
+
+
+```{r}
+EV= (.815)*1*26 - (1-.815)*1*26
+print(EV)
+```
+
+Dr J. on average wins $16.38 playing BBets. 
 
 ```{r}
 # Calculate 95% confidence interval
@@ -89,6 +100,25 @@ conf_interval <- c(mean_probs - error_margin, mean_probs + error_margin)
 cat("95% Confidence Interval for the Mean Probability: [", conf_interval[1], ",", conf_interval[2], "]\n")
 
 ```
+
+
+```{r}
+# Simulation settings
+class_size <- 35
+n_sim <- 1000
+n_trials <- 100
+
+# Vector to store the probabilities from each trial
+probs <- numeric(n_trials)
+
+# Run the simulation 100 times
+for (i in 1:n_trials) {
+  probs[i] <- same_birthday_prob(class_size, n_sim)
+}
+mean_probs=mean(probs)
+print(mean_probs)
+```
+
 
 
 get answers for a smaller class
@@ -107,6 +137,8 @@ for (i in 1:n_trials) {
   probs[i] <- same_birthday_prob(class_size, n_sim)
 }
 
+EV= mean_probs*1*20 - (1-mean_probs)*1*20
+cat("Average win = ", EV)
 ```
 
 ## mean and std dev 
@@ -122,7 +154,11 @@ cat("Standard Deviation of Probabilities:", sd_probs, "\n")
 
 ```
 
-
+```{r}
+EV= mean_probs*1*20 - (1-mean_probs)*1*20
+cat("Average win = ", EV)
+```
+For a class size of 27 people with 20 people betting, Dr.J's profit would be $5.18.
 
 ### Explanation:
 
